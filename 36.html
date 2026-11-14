@@ -7,6 +7,35 @@
     <title>♡</title>
 
     <style>
+     #volSlider {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    width: 120px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.5s;
+    z-index: 9999;
+    cursor: pointer;
+  }
+  #volSlider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border-radius: 50%;
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
         
 .child--featured {
 flex-basis: 30%;
@@ -140,7 +169,15 @@ ul.social {
                 
             </div>
             
-      
+      <input type="range" id="volSlider" min="0" max="1" step="0.05" value="1">
+
+<script>
+  const vid = document.getElementById('bgVid'), slider = document.getElementById('volSlider');
+  if (vid) {
+    vid.volume = slider.value;
+    slider.oninput = () => vid.volume = slider.value;
+  }
+</script>
             <script>
                 
 const video = document.getElementById('bgVid');
