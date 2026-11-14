@@ -116,7 +116,7 @@ ul.social {
 
     
         <video autoplay muted loop playsinline disablePictureInPicture id="bgVid"> 
-            <source src="1106.mp4"></video>
+            <source src="1102.mp4"></video>
     
           
         <div class="content" id="content">
@@ -134,7 +134,27 @@ ul.social {
                 <LI><a href="https://discord.com/invite/tcKJVcmu9S">discord</a></LI>
                 <li><a href="https://tip.dokan.sa/nvwal">دكان تب </a></li>
             <li><a href="https://www.rankone.global/nawal">rankone</a></li> 
-                
+                <!-- Video Element with controls -->
+<video id="myVideo" width="400" controls>
+  <source src="your-video-file.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<!-- Volume Slider -->
+<div>
+  <label for="volumeSlider">Volume: </label>
+  <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1">
+</div>
+
+<script>
+  const video = document.getElementById('myVideo');
+  const slider = document.getElementById('volumeSlider');
+
+  // Update video volume when slider moves
+  slider.addEventListener('input', (e) => {
+    video.volume = e.target.value;
+  });
+</script>
 
                 
             </div>
